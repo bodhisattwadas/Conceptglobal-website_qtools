@@ -364,6 +364,20 @@ header nav ul > li > a,
   padding-bottom: 0.25rem;
 }
 
+header nav ul > li > a {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: 1.75rem;
+  line-height: 1.2;
+  gap: 0.25rem;
+}
+
+header nav ul > li > a svg {
+  flex: 0 0 auto;
+  display: block;
+  margin-top: 0.05rem;
+}
+
 header nav ul > li > a::after,
 #mobile-menu ul li > a::after,
 #mobile-menu ul li > button::after {
@@ -837,4 +851,37 @@ header nav ul > li > a:focus-visible::after,
   .form-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Site-wide corner radius */
+:where(
+  [class*="rounded"],
+  #products-dropdown,
+  #mobile-products-dropdown,
+  .group.relative.bg-gray-100,
+  .group img,
+  .group a.mt-auto.inline-block,
+  .hero-banner,
+  .hero-dot,
+  .footer-card,
+  .footer-cta,
+  .footer-map-wrap,
+  .footer-map-frame,
+  .product-action,
+  .product-hero-media,
+  .product-hero-card,
+  .product-hero-card span,
+  .logo-grid a,
+  .contact-panel input,
+  .contact-panel select,
+  .contact-panel textarea,
+  .form-actions button
+) {
+  border-radius: 4px !important;
+}
+
+header nav ul > li > a::after,
+#mobile-menu ul li > a::after,
+#mobile-menu ul li > button::after {
+  border-radius: 4px !important;
 }
