@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('mouseleave', hideDropdown);
     dropdown.addEventListener('mouseenter', showDropdown);
     dropdown.addEventListener('mouseleave', hideDropdown);
-    toggle.addEventListener('click', toggleDropdown);
+    toggle.addEventListener('click', function (e) {
+      if (toggle.tagName === 'A') {
+        e.preventDefault();
+        return;
+      }
+
+      toggleDropdown();
+    });
   });
 });

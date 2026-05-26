@@ -168,6 +168,9 @@ a.inline-block.text-xl:hover,
 #mobile-products-dropdown a {
   border-color: rgba(255, 255, 255, 0.16) !important;
   background: rgba(255, 255, 255, 0.02) !important;
+  margin: 0.25rem;
+  padding: 0.72rem 0.85rem !important;
+  line-height: 1.25;
 }
 
 #products-dropdown a:hover,
@@ -339,12 +342,12 @@ footer a {
 header .flex.justify-between.items-center {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.55rem 1rem !important;
+  padding: 0.95rem 1rem !important;
   gap: 1rem;
 }
 
 header a.flex.flex-col.items-center.w-50 {
-  width: 88px !important;
+  width: 118px !important;
   flex: 0 0 auto;
 }
 
@@ -367,7 +370,7 @@ header nav ul > li > a,
 header nav ul > li > a {
   display: inline-flex !important;
   align-items: center;
-  min-height: 1.75rem;
+  min-height: 2.35rem;
   line-height: 1.2;
   gap: 0.25rem;
 }
@@ -405,11 +408,11 @@ header nav ul > li > a:focus-visible::after,
 
 @media (max-width: 980px) {
   header .flex.justify-between.items-center {
-    padding: 0.45rem 0.65rem !important;
+    padding: 0.75rem 0.65rem !important;
   }
 
   header a.flex.flex-col.items-center.w-50 {
-    width: 74px !important;
+    width: 96px !important;
   }
 }
 
@@ -890,4 +893,476 @@ header nav ul > li > a::after,
 #mobile-menu ul li > a::after,
 #mobile-menu ul li > button::after {
   border-radius: 4px !important;
+}
+
+/* Lebo-inspired light laboratory theme */
+:root {
+  --lebo-blue: #0b63f6;
+  --lebo-blue-dark: #06285e;
+  --lebo-cyan: #25d7f2;
+  --lebo-ink: #17233c;
+  --lebo-text: #4c5870;
+  --lebo-soft: #f6f9ff;
+  --lebo-lavender: #f1ecff;
+  --lebo-border: #e6edf8;
+  --lebo-shadow: 0 14px 36px rgba(35, 68, 126, 0.12);
+}
+
+body {
+  color: var(--lebo-text) !important;
+  background: #ffffff !important;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 0 30%, rgba(37, 215, 242, 0.08), transparent 24%),
+    radial-gradient(circle at 100% 72%, rgba(11, 99, 246, 0.07), transparent 26%) !important;
+  background-size: auto !important;
+  opacity: 1 !important;
+}
+
+header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--lebo-border) !important;
+  box-shadow: 0 6px 24px rgba(18, 43, 82, 0.08) !important;
+  backdrop-filter: none !important;
+  position: relative;
+}
+
+header::before {
+  content: "Email: support@qtools.in";
+  display: block;
+  padding: 0.48rem max(1rem, calc((100vw - 1200px) / 2));
+  background: var(--lebo-blue-dark);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+header::after {
+  content: "Phone: +91-9231646469";
+  position: absolute;
+  top: 0.48rem;
+  right: max(1rem, calc((100vw - 1200px) / 2));
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+header a,
+header nav ul > li > a,
+nav a,
+button,
+h1,
+h2,
+h3,
+li {
+  color: var(--lebo-ink) !important;
+}
+
+header nav ul > li > a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.55rem 0 !important;
+}
+
+header a:hover,
+nav a:hover,
+button:hover,
+.read-more-toggle,
+.read-more-toggle-text-only,
+.product-kicker {
+  color: var(--lebo-blue) !important;
+}
+
+header nav ul > li > a::after,
+#mobile-menu ul li > a::after,
+#mobile-menu ul li > button::after {
+  background: linear-gradient(90deg, var(--lebo-blue), var(--lebo-cyan)) !important;
+}
+
+#products-dropdown,
+#mobile-products-dropdown {
+  background: #ffffff !important;
+  border: 1px solid var(--lebo-border) !important;
+  box-shadow: var(--lebo-shadow) !important;
+}
+
+#products-dropdown a,
+#mobile-products-dropdown a {
+  color: var(--lebo-ink) !important;
+  background: #ffffff !important;
+  border-color: var(--lebo-border) !important;
+}
+
+#products-dropdown a:hover,
+#mobile-products-dropdown a:hover {
+  background: #eef5ff !important;
+  color: var(--lebo-blue) !important;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: none;
+  height: clamp(420px, 68vh, 680px);
+  margin: 0 auto 4.5rem;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.hero-slide img {
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(8, 31, 67, 0.74), rgba(8, 31, 67, 0.34)) !important;
+}
+
+.hero-line-small {
+  color: #dcecff !important;
+}
+
+.hero-line-large {
+  max-width: 18ch;
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.hero-dot {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-dot.is-active {
+  background: var(--lebo-blue);
+}
+
+.container.mx-auto.max-w-6xl,
+.product-page,
+.top-page {
+  background: transparent !important;
+}
+
+#main-heading span:first-child {
+  color: var(--lebo-blue) !important;
+}
+
+.quantum-text {
+  background: none !important;
+  -webkit-text-fill-color: var(--lebo-ink) !important;
+  color: var(--lebo-ink) !important;
+}
+
+main p,
+.group p,
+.top-panel p,
+.top-panel li,
+.top-panel label,
+.product-panel p,
+.product-panel li {
+  color: var(--lebo-text) !important;
+}
+
+.group.relative.bg-gray-100,
+.product-hero-card,
+.top-panel,
+.product-panel {
+  background: #ffffff !important;
+  border: 1px solid var(--lebo-border) !important;
+  box-shadow: var(--lebo-shadow) !important;
+}
+
+.group.relative.bg-gray-100 {
+  padding: 1.4rem !important;
+}
+
+.group.relative.bg-gray-100:hover {
+  border-color: rgba(11, 99, 246, 0.34);
+  box-shadow: 0 20px 46px rgba(35, 68, 126, 0.18);
+}
+
+.group h3,
+.top-hero h1,
+.top-panel h2,
+.product-hero h1,
+.product-panel h2,
+.footer-card h3,
+.footer-card h4 {
+  color: var(--lebo-ink) !important;
+}
+
+.group img,
+.product-hero-media {
+  border-color: var(--lebo-border) !important;
+  box-shadow: 0 12px 30px rgba(35, 68, 126, 0.12) !important;
+}
+
+a.inline-block.bg-\[\#716361\],
+a.inline-block.bg-\[\#8A7A78\],
+a.inline-block.text-xl,
+.group a.mt-auto.inline-block,
+.product-action,
+.form-actions button,
+.footer-cta {
+  background: var(--lebo-blue) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 22px rgba(11, 99, 246, 0.24) !important;
+  border-radius: 2px !important;
+}
+
+a.inline-block.bg-\[\#716361\]:hover,
+a.inline-block.bg-\[\#8A7A78\]:hover,
+a.inline-block.text-xl:hover,
+.group a.mt-auto.inline-block:hover,
+.product-action:hover,
+.form-actions button:hover,
+.footer-cta:hover {
+  background: #084fc5 !important;
+  color: #ffffff !important;
+}
+
+.bg-gray-250,
+section.bg-gray-250,
+.top-page,
+.product-page {
+  background: #ffffff !important;
+}
+
+.product-hero,
+.top-hero {
+  position: relative;
+}
+
+.product-hero::before,
+.top-hero::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto auto -3rem;
+  width: 120px;
+  height: 120px;
+  border: 18px solid rgba(37, 215, 242, 0.12);
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.product-hero-copy > p:not(.product-kicker),
+.top-hero p:not(.product-kicker) {
+  color: var(--lebo-text) !important;
+}
+
+.product-hero-media,
+.product-hero-card span {
+  background: #ffffff !important;
+}
+
+.product-panel,
+.top-panel {
+  max-width: 980px;
+  padding: 1.5rem !important;
+}
+
+.product-panel li::before,
+.top-panel li::before {
+  color: var(--lebo-cyan) !important;
+}
+
+.logo-grid a {
+  background: linear-gradient(180deg, #eef6ff, #e7f1ff) !important;
+  border-color: #cfe0f5 !important;
+  box-shadow: 0 10px 28px rgba(35, 68, 126, 0.08);
+}
+
+.logo-grid a.logo-card-dark {
+  background: linear-gradient(135deg, #0a4f79, #083a5f) !important;
+  border-color: #0a4f79 !important;
+  box-shadow: 0 14px 34px rgba(8, 58, 95, 0.22);
+}
+
+.logo-grid a.logo-card-dark img {
+  max-width: 82%;
+  max-height: 96px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.18));
+}
+
+.customer-logo-grid a:nth-child(1) {
+  background: linear-gradient(180deg, #eef7ff, #dcecff) !important;
+  border-color: #bfd8f5 !important;
+}
+
+.customer-logo-grid a:nth-child(2) {
+  background: linear-gradient(180deg, #f0fff8, #ddf7ec) !important;
+  border-color: #bee9d7 !important;
+}
+
+.customer-logo-grid a:nth-child(3) {
+  background: linear-gradient(180deg, #f7f2ff, #ece4ff) !important;
+  border-color: #d8cbf6 !important;
+}
+
+.collaborator-logo-grid a:nth-child(2) {
+  background: linear-gradient(180deg, #f7f2ff, #ece4ff) !important;
+  border-color: #d8cbf6 !important;
+}
+
+.collaborator-logo-grid a:nth-child(3) {
+  background: linear-gradient(180deg, #f1fff4, #def8e5) !important;
+  border-color: #c4e7cd !important;
+}
+
+.contact-panel input,
+.contact-panel select,
+.contact-panel textarea {
+  background: #ffffff !important;
+  border-color: var(--lebo-border) !important;
+  color: var(--lebo-ink) !important;
+  box-shadow: inset 0 1px 0 rgba(35, 68, 126, 0.03);
+}
+
+.site-footer {
+  background:
+    linear-gradient(rgba(246, 249, 255, 0.92), rgba(246, 249, 255, 0.92)),
+    url("../images/cryogenic_uniaxial_strain_cells.jpg") center/cover no-repeat !important;
+  border-top: 1px solid var(--lebo-border) !important;
+}
+
+.footer-card,
+.footer-map-wrap {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border-color: var(--lebo-border) !important;
+  box-shadow: 0 12px 32px rgba(35, 68, 126, 0.1);
+}
+
+.footer-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem 1.45rem !important;
+  min-height: 190px;
+  background: linear-gradient(180deg, #ffffff, #f9fbff) !important;
+  border: 1px solid #dbe6f5 !important;
+  box-shadow: 0 16px 40px rgba(20, 48, 92, 0.1) !important;
+}
+
+.footer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lebo-blue), var(--lebo-cyan));
+}
+
+.footer-card h3,
+.footer-card h4 {
+  margin-bottom: 0.9rem !important;
+  color: var(--lebo-ink) !important;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.footer-card p {
+  margin-bottom: 0.65rem !important;
+  color: #52617a !important;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.footer-contact p,
+.footer-meta p {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+}
+
+.footer-contact p::before,
+.footer-meta p::before {
+  content: "";
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  margin-top: 0.62rem;
+  border-radius: 50% !important;
+  background: var(--lebo-cyan);
+  box-shadow: 0 0 0 4px rgba(37, 215, 242, 0.12);
+}
+
+.footer-brand .footer-copy {
+  margin-top: 1rem !important;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--lebo-border);
+  color: #6a7890 !important;
+  font-size: 0.92rem;
+}
+
+.footer-cta {
+  margin-top: 0.85rem !important;
+  padding: 0.72rem 1.05rem !important;
+  border-radius: 4px !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: #ffffff !important;
+  background: #063b8f !important;
+  box-shadow: 0 10px 22px rgba(6, 59, 143, 0.24) !important;
+}
+
+.footer-cta:hover {
+  background: #041f4f !important;
+  color: #ffffff !important;
+}
+
+.footer-card p,
+.footer-card a,
+.footer-copy,
+.footer-map-head h4,
+.footer-map-head p {
+  color: var(--lebo-text) !important;
+}
+
+.footer-card a.footer-cta,
+.footer-card a.footer-cta:visited,
+.footer-card a.footer-cta:hover,
+.footer-card a.footer-cta:focus {
+  color: #ffffff !important;
+}
+
+.footer-shell::after {
+  content: "Copyright (c) 2025 Quantum Tools and Services. All rights reserved.";
+  display: block;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  background: var(--lebo-blue-dark);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  header::before {
+    font-size: 0.72rem;
+    padding-right: 1rem;
+  }
+
+  header::after {
+    position: static;
+    display: block;
+    margin-top: -1.55rem;
+    padding-right: 1rem;
+    text-align: right;
+    font-size: 0.72rem;
+  }
+
+  .hero-banner {
+    height: 58vh;
+  }
+
+  .product-panel,
+  .top-panel {
+    padding: 1rem !important;
+  }
 }
