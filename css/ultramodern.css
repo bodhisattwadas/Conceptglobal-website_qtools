@@ -931,7 +931,7 @@ header {
 }
 
 header::before {
-  content: "Email: support@qtools.in";
+  content: "Email: mainak@qtools.in";
   display: block;
   padding: 0.48rem max(1rem, calc((100vw - 1200px) / 2));
   background: var(--lebo-blue-dark);
@@ -942,7 +942,7 @@ header::before {
 }
 
 header::after {
-  content: "Phone: +91-9231646469";
+  content: "Phone: +91-9903764345";
   position: absolute;
   top: 0.48rem;
   right: max(1rem, calc((100vw - 1200px) / 2));
