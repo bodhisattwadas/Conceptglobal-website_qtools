@@ -1,0 +1,1344 @@
+/* ============================================================
+   Quantum Tools and Services (QTS) — fab2 Precision Design System
+   Inspired by fab2.com "The Reticle" & Semiconductor Cleanroom Aesthetic
+   - Signature Titanium Grey (#928585), Zero Harsh Pure Black (#000000)
+   - 6 Discrete Titanium Accents: Sky, Green, Pink, Gold, Lavender, Taupe
+   - Architectural 1px Hairlines (#ece8e7), Frosted Chrome Surfaces
+   - Modern Grotesque & Technical Precision Monospace Typography
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Paper & Grounds */
+  --paper: #ffffff;
+  --sunken: #f8f6f5;
+  --surface: #ffffff;
+  --surface-alt: #faf8f7;
+  --surface-muted: #f3efee;
+
+  /* Titanium Inks (No pure #000000) */
+  --ink: #928585;          /* Signature warm titanium grey */
+  --ink-display: #252020;  /* High-contrast deep slate for titles */
+  --ink-body: #554d4d;     /* High-legibility warm charcoal body text */
+  --ink-subtle: #7f7474;   /* Secondary descriptions, meta */
+  --ink-muted: #a39999;    /* Borders, disabled, inactive */
+  --ink-faint: #c9c1c0;    /* Watermarks, decorative lines */
+
+  /* Precision Architectural Hairlines */
+  --line: #ece8e7;
+  --line-strong: #dad3d2;
+  --line-faint: #f4f0ef;
+
+  /* 6 Discrete Titanium Cleanroom Accents */
+  --accent-sky: #80b7d7;
+  --accent-sky-bg: #f0f7fb;
+  --accent-green: #94c47d;
+  --accent-green-bg: #f2f9ef;
+  --accent-pink: #eb85a3;
+  --accent-pink-bg: #fdf1f4;
+  --accent-gold: #eebf00;
+  --accent-gold-bg: #fdf9e8;
+  --accent-lavender: #c699c3;
+  --accent-lavender-bg: #faf3fa;
+  --accent-taupe: #928585;
+  --accent-taupe-bg: #f5f3f3;
+
+  /* Interactive Titanium Theme Accent */
+  --brand-primary: #3d3636;
+  --brand-primary-hover: #1f1b1b;
+  --brand-secondary: #928585;
+
+  /* Frosted Glass & Precision Shadows */
+  --chrome-bg: rgba(255, 255, 255, 0.94);
+  --chrome-edge: rgba(146, 133, 133, 0.16);
+  --shadow-sm: 0 2px 8px rgba(95, 86, 86, 0.05);
+  --shadow-card: 0 16px 36px -28px rgba(95, 86, 86, 0.22);
+  --shadow-hover: 0 24px 48px -20px rgba(95, 86, 86, 0.32);
+  --shadow-dropdown: 0 20px 40px -15px rgba(35, 30, 30, 0.15);
+
+  /* Typography Stacks */
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Geometry & Metrics */
+  --max-w: 1240px;
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --header-h: 70px;
+  --topbar-h: 36px;
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   Base Resets & Global Styles
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--paper) !important;
+  color: var(--ink-body) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Subtle Reticle Background Grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.45;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container */
+.qts-container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ============================================================
+   Micro-Typography & Precision Badges
+   ============================================================ */
+.qts-mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.qts-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink-body);
+}
+
+.qts-badge.sky {
+  border-color: var(--accent-sky);
+  background: var(--accent-sky-bg);
+  color: #3b7194;
+}
+
+.qts-badge.green {
+  border-color: var(--accent-green);
+  background: var(--accent-green-bg);
+  color: #4b7d34;
+}
+
+.qts-badge.gold {
+  border-color: var(--accent-gold);
+  background: var(--accent-gold-bg);
+  color: #927500;
+}
+
+.qts-badge.pink {
+  border-color: var(--accent-pink);
+  background: var(--accent-pink-bg);
+  color: #aa3f60;
+}
+
+.qts-badge.lavender {
+  border-color: var(--accent-lavender);
+  background: var(--accent-lavender-bg);
+  color: #7b4e78;
+}
+
+.qts-badge.taupe {
+  border-color: var(--accent-taupe);
+  background: var(--accent-taupe-bg);
+  color: var(--ink-body);
+}
+
+/* Reticle Crosshair Decoration */
+.reticle-mark {
+  position: relative;
+}
+
+.reticle-mark::before,
+.reticle-mark::after {
+  content: "+";
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.reticle-mark::before { top: 6px; left: 6px; }
+.reticle-mark::after  { bottom: 6px; right: 6px; }
+
+/* ============================================================
+   Header & Top Utility Bar
+   ============================================================ */
+.qts-top-bar {
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.76rem;
+  color: var(--ink-subtle);
+  position: relative;
+  z-index: 101;
+}
+
+.qts-top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--topbar-h);
+}
+
+.qts-top-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.qts-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(148, 196, 125, 0.25);
+  display: inline-block;
+}
+
+.qts-status-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-body);
+}
+
+.qts-divider {
+  color: var(--line-strong);
+}
+
+.qts-top-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.qts-contact-link {
+  color: var(--ink-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.qts-contact-link:hover {
+  color: var(--ink-display);
+}
+
+.qts-mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Main Sticky Header */
+.qts-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--chrome-bg) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line) !important;
+  box-shadow: 0 4px 20px rgba(95, 86, 86, 0.04) !important;
+  transition: all var(--transition-fast);
+}
+
+.qts-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+
+/* Brand Logo (Un-squished) */
+.qts-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.qts-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.qts-brand:hover .qts-logo {
+  transform: translateY(-1px);
+}
+
+/* Navigation Links */
+.qts-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.qts-nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-body);
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.qts-nav-link:hover,
+.qts-nav-link.active {
+  color: var(--ink-display);
+}
+
+.qts-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-primary);
+  transition: width var(--transition-fast);
+}
+
+.qts-nav-link:hover::after,
+.qts-nav-link.active::after {
+  width: 100%;
+}
+
+.qts-chevron {
+  font-size: 0.65rem;
+  color: var(--ink);
+  transition: transform var(--transition-fast);
+}
+
+/* Dropdown Menu */
+.qts-dropdown-trigger {
+  position: relative;
+}
+
+.qts-dropdown-trigger:hover .qts-chevron {
+  transform: rotate(180deg);
+}
+
+.qts-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  width: 380px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dropdown);
+  padding: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 150;
+}
+
+.qts-dropdown-trigger:hover .qts-dropdown-panel,
+.qts-dropdown-trigger:focus-within .qts-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.qts-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.qts-dropdown-item:hover {
+  background: var(--sunken);
+}
+
+.qts-item-badge {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius-xs);
+  margin-top: 0.15rem;
+}
+
+.qts-item-badge.sky      { background: var(--accent-sky-bg); color: #3b7194; border: 1px solid var(--accent-sky); }
+.qts-item-badge.green    { background: var(--accent-green-bg); color: #4b7d34; border: 1px solid var(--accent-green); }
+.qts-item-badge.gold     { background: var(--accent-gold-bg); color: #927500; border: 1px solid var(--accent-gold); }
+.qts-item-badge.lavender { background: var(--accent-lavender-bg); color: #7b4e78; border: 1px solid var(--accent-lavender); }
+.qts-item-badge.pink     { background: var(--accent-pink-bg); color: #aa3f60; border: 1px solid var(--accent-pink); }
+.qts-item-badge.taupe    { background: var(--accent-taupe-bg); color: var(--ink-body); border: 1px solid var(--line-strong); }
+
+.qts-dropdown-item strong {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-display);
+  margin-bottom: 0.15rem;
+}
+
+.qts-dropdown-item p {
+  font-size: 0.75rem;
+  color: var(--ink-subtle);
+  line-height: 1.35;
+}
+
+/* Nav CTA Button */
+.qts-nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 1rem;
+  background: var(--brand-primary);
+  color: #ffffff !important;
+  border-radius: var(--radius-xs);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.qts-nav-cta:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Mobile Toggle */
+.qts-mobile-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+}
+
+.qts-mobile-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink-display);
+  transition: transform var(--transition-fast);
+}
+
+/* ============================================================
+   Reticle Hero Section (Home)
+   ============================================================ */
+.qts-hero {
+  position: relative;
+  padding: 4rem 0 4.5rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--sunken) 100%);
+  overflow: hidden;
+}
+
+.qts-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.qts-hero-pre {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.qts-hero-title {
+  font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: var(--ink-display);
+  margin-bottom: 1.25rem;
+}
+
+.qts-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-body);
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.qts-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.qts-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.45rem;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 4px 14px rgba(37, 32, 32, 0.18);
+  transition: all var(--transition-fast);
+}
+
+.qts-btn-primary:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 32, 32, 0.24);
+}
+
+.qts-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--paper);
+  color: var(--ink-display) !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.45rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--line-strong);
+  transition: all var(--transition-fast);
+}
+
+.qts-btn-outline:hover {
+  border-color: var(--ink);
+  background: var(--sunken);
+  transform: translateY(-2px);
+}
+
+/* Metric Strip in Hero */
+.qts-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.qts-metric-item strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-display);
+  letter-spacing: -0.02em;
+}
+
+.qts-metric-item span {
+  font-size: 0.75rem;
+  color: var(--ink-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Hero Hardware Reticle Stage (Right Column) */
+.qts-hero-stage {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem;
+}
+
+.qts-stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+
+.qts-stage-display {
+  position: relative;
+  height: 310px;
+  background: var(--sunken);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.qts-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--transition-smooth);
+}
+
+.qts-stage-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qts-stage-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.qts-stage-tab {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xs);
+  background: var(--paper);
+  color: var(--ink-body);
+  transition: all var(--transition-fast);
+}
+
+.qts-stage-tab.active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+}
+
+/* ============================================================
+   Section Headings & Layouts
+   ============================================================ */
+.qts-section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.qts-section-alt {
+  background: var(--sunken);
+}
+
+.qts-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.qts-section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+.qts-section-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.qts-section-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink-display);
+  margin-bottom: 0.85rem;
+}
+
+.qts-section-subtitle {
+  font-size: 0.98rem;
+  color: var(--ink-subtle);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   Wafer-Die Product Grid (Homepage)
+   ============================================================ */
+.qts-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.qts-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+}
+
+.qts-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--line-strong);
+}
+
+.qts-card-accent-bar {
+  height: 3px;
+  width: 100%;
+}
+
+.qts-card-accent-bar.sky      { background: var(--accent-sky); }
+.qts-card-accent-bar.green    { background: var(--accent-green); }
+.qts-card-accent-bar.gold     { background: var(--accent-gold); }
+.qts-card-accent-bar.lavender { background: var(--accent-lavender); }
+.qts-card-accent-bar.pink     { background: var(--accent-pink); }
+.qts-card-accent-bar.taupe    { background: var(--accent-taupe); }
+
+.qts-card-media {
+  height: 200px;
+  background: var(--surface-alt);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qts-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.qts-card:hover .qts-card-media img {
+  transform: scale(1.03);
+}
+
+/* Cleanroom Technical Schematics for Cards without Photos */
+.qts-schematic {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--sunken) 100%);
+}
+
+.qts-schematic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  opacity: 0.5;
+}
+
+.qts-schematic-cell {
+  height: 32px;
+  border: 1px dashed var(--ink-faint);
+  border-radius: var(--radius-xs);
+}
+
+.qts-card-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.qts-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.qts-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink-display);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.qts-card-desc {
+  font-size: 0.88rem;
+  color: var(--ink-body);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.qts-card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line-faint);
+}
+
+.qts-spec-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+  background: var(--sunken);
+  color: var(--ink-body);
+  border: 1px solid var(--line);
+}
+
+.qts-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-display);
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.qts-card-action:hover {
+  color: var(--brand-primary);
+  gap: 0.7rem;
+}
+
+/* ============================================================
+   Product Detail Pages (e.g. dactools, cryo strain cells)
+   ============================================================ */
+.qts-detail-hero {
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--sunken) 100%);
+}
+
+.qts-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.qts-detail-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.qts-detail-title {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--ink-display);
+  margin-bottom: 1.1rem;
+}
+
+.qts-detail-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-body);
+  margin-bottom: 1.8rem;
+}
+
+/* Hardware Media Showcase in Product Pages */
+.qts-detail-media {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem;
+}
+
+.qts-media-box {
+  background: var(--sunken);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.qts-media-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Technical Specification Table */
+.qts-spec-table-wrap {
+  margin: 2.5rem 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: var(--paper);
+}
+
+.qts-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.qts-spec-table th {
+  background: var(--sunken);
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.qts-spec-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--line-faint);
+  color: var(--ink-body);
+}
+
+.qts-spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.qts-spec-table td.spec-param {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--ink-display);
+  width: 32%;
+}
+
+/* Feature Grid inside Product Pages */
+.qts-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.qts-feature-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.qts-feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-display);
+  margin-bottom: 0.6rem;
+}
+
+.qts-feature-card p {
+  font-size: 0.88rem;
+  color: var(--ink-body);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Institutional Matrix (Collaborators & Customers)
+   ============================================================ */
+.qts-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.qts-partner-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.qts-partner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--line-strong);
+}
+
+.qts-partner-logo-box {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--sunken);
+  border: 1px solid var(--line-faint);
+}
+
+.qts-partner-logo-box img {
+  max-height: 64px;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.qts-partner-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-display);
+  margin-bottom: 0.5rem;
+}
+
+.qts-partner-card p {
+  font-size: 0.86rem;
+  color: var(--ink-body);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* ============================================================
+   Contact & Cleanroom RFQ Console
+   ============================================================ */
+.qts-rfq-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.qts-rfq-console {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 2.2rem;
+}
+
+.qts-form-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+}
+
+.qts-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.qts-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.qts-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-display);
+  display: flex;
+  justify-content: space-between;
+}
+
+.qts-input,
+.qts-select,
+.qts-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink-display);
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xs);
+  padding: 0.68rem 0.85rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.qts-input:focus,
+.qts-select:focus,
+.qts-textarea:focus {
+  outline: none;
+  border-color: var(--accent-sky);
+  box-shadow: 0 0 0 3px rgba(128, 183, 215, 0.22);
+}
+
+.qts-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.qts-contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.qts-info-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.qts-info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-display);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qts-info-card p,
+.qts-info-card address {
+  font-style: normal;
+  font-size: 0.88rem;
+  color: var(--ink-body);
+  line-height: 1.6;
+}
+
+.qts-map-frame {
+  height: 220px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  margin-top: 0.85rem;
+}
+
+.qts-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   Architectural Unified Footer
+   ============================================================ */
+.qts-footer {
+  background: var(--surface-alt);
+  border-top: 1px solid var(--line);
+  color: var(--ink-body);
+  padding: 4.5rem 0 2rem;
+  position: relative;
+}
+
+.qts-footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.qts-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qts-footer-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+.qts-footer-desc {
+  font-size: 0.88rem;
+  color: var(--ink-subtle);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+.qts-footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-display);
+  margin-bottom: 1.15rem;
+}
+
+.qts-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.qts-footer-links a {
+  font-size: 0.86rem;
+  color: var(--ink-body);
+}
+
+.qts-footer-links a:hover {
+  color: var(--ink-display);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.qts-footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--ink-subtle);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.qts-footer-legal {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* ============================================================
+   Responsive Styles
+   ============================================================ */
+@media (max-width: 1080px) {
+  .qts-hero-grid,
+  .qts-detail-grid,
+  .qts-rfq-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .qts-product-grid,
+  .qts-partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qts-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .qts-top-bar {
+    display: none;
+  }
+
+  .qts-nav {
+    display: none;
+  }
+
+  .qts-nav.is-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-dropdown);
+  }
+
+  .qts-nav.is-open .qts-nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .qts-mobile-btn {
+    display: flex;
+  }
+
+  .qts-product-grid,
+  .qts-partner-grid,
+  .qts-feature-grid,
+  .qts-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .qts-hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .qts-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

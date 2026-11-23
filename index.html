@@ -1,361 +1,521 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Quantum Tools and Services - Home</title><link rel="stylesheet" href="css/collaborators.BH6OdfiI.css"><link rel="stylesheet" href="css/ultramodern.css"></head> <body class="bg-gray-50 text-gray-600 overflow-x-hidden font-[Times New Roman]"> <!-- Page Wrapper (everything that should shrink) --> <div id="page-wrapper" class="transition-all duration-300 ease-in-out origin-right"> <!-- Header --> <header class="bg-[#8A7A78] text-black font-semibold shadow-md sticky top-0 z-50"> <div class="flex justify-between items-center pl-2 pr-2"> <a href="index.html" class="flex flex-col items-center w-50 hover:scale-105 hover:-translate-y-1 transition-transform duration-300"> <!-- Logo --> <img src="images/logo_black.png" alt="QTS Logo" class="w-full rounded-full"> </a> <!-- Hamburger Button --> <button id="menu-toggle-header" class="md:hidden text-white focus:outline-none p-3" aria-label="Open Menu"> <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <!-- Desktop Nav --> <nav class="hidden md:block"> <ul class="flex gap-6 text-xl ml-2"> <li><a href="index.html" class="hover:text-gray-200 transition">Home</a></li> <li class="relative group"> <a href="index.html" id="products-toggle" class="hover:text-gray-200 group transition flex items-center gap-1  relative" data-toggle-id="products-toggle">
-Products
-<svg class="w-4 h-4 text-gray-200 transform transition-transform duration-300 rotate-0 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <!-- This is a down arrow (chevron-down) --> <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path> </svg> </a> <ul id="products-dropdown" class="absolute left-0 mt-1 w-40 bg-[#8A7A78] text-black text-sm font-semibold rounded shadow-lg opacity-0 invisible transition-opacity duration-300 z-50" data-dropdown-id="products-dropdown"> <li> <a href="dactools.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Diamond Anvil Cell & Accessories
-</a> </li> <li> <a href="cryogenic_uniaxial_strain_cells.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Cryogenic Strain/Stress Cells
-</a> </li> <li> <a href="lithographic_device_fabrication.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Micro/Nano-Fabrication Services
-</a> </li> <li> <a href="optical_components.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Optical Components
-</a> </li> <li> <a href="vacuum_fittings.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Vacuum Fittings
-</a> </li> <li> <a href="aluminium_structures.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Heavy-Duty Aluminium T-Slot Extrusion Profile
-</a> </li> <!-- <li>
-                    <a 
-                      href="/products/precise_cnc_machining"
-                      class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200 text-center"
-                    >
-                      Precise CNC Machining
-                    </a> 
-                  </li> --> <!-- <li class="relative group">
-                    <a 
-                      id="product1-toggle" 
-                      class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200 hover:text-gray-200 transition flex items-center gap-1 group relative text-sm font-semibold"
-                      data-toggle-id="product1-toggle"
-                    >
-                      Product 1
-                      <svg
-                        class="w-4 h-4 text-gray-200 transform group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </a>
-                    <ul 
-                      id="product1-dropdown" 
-                      class="hidden relative left-0 mt-1 w-30 bg-gray-600 text-white rounded shadow-lg opacity-0 transition-opacity duration-300 z-20"
-                      data-dropdown-id="product1-dropdown"
-                    >
-                      <li>
-                        <a 
-                          href="/products/product1/option1" 
-                          class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                        >
-                          Option 1
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="/products/product1/option2" 
-                          class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                        >
-                          Option 2
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a 
-                      href="/products/product2"
-                      class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                    >
-                      Product 2
-                    </a> 
-                  </li>
-                  <li class="relative group">
-                    <a 
-                      id="product3-toggle" 
-                      class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200 hover:text-gray-200 transition flex items-center gap-1 group relative text-sm font-semibold"
-                      data-toggle-id="product3-toggle"
-                    >
-                      Product 3
-                      <svg
-                        class="w-4 h-4 text-gray-200 transform group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </a>
-                    <ul 
-                      id="product3-dropdown"
-                      class="hidden relative left-0 mt-1 w-30 bg-gray-600 text-white rounded shadow-lg opacity-0 transition-opacity duration-300 z-20"
-                      data-dropdown-id="product3-dropdown"
-                    >
-                      <li>
-                        <a 
-                          href="/products/product3/option1" 
-                          class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                        >
-                          Option 1
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="/products/product3/option2" 
-                          class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                        >
-                          Option 2
-                        </a>
-                      </li>
-                    </ul>
-                  </li> --> </ul> </li> <li><a href="machining.html" class="hover:text-gray-200 transition">Machining</a></li> <li><a href="consulting.html" class="hover:text-gray-200 transition">Consulting</a></li> <li><a href="customers.html" class="hover:text-gray-200 transition">Customers</a></li> <li><a href="collaborators.html" class="hover:text-gray-200 transition">Collaborators</a></li> <!-- <li><a href="/experts" class="hover:text-gray-200 transition">Experts</a></li> --> <li><a href="contact.html" class="hover:text-gray-200 transition">Contact</a></li> </ul> </nav> </div> </header> <!-- Main Content --> <main class="min-h-screen"> <section class="hero-banner" aria-label="Featured highlights"> <div class="hero-track"> <div class="hero-slide is-active"><img src="images/dactools_front.jpg" alt="Diamond Anvil Cell systems"></div> <div class="hero-slide"><img src="images/cryogenic_uniaxial_strain_cells.jpg" alt="Cryogenic strain and stress cells"></div> <div class="hero-slide"><img src="images/logo_black.png" alt="Quantum Tools and Services"></div> </div> <div class="hero-overlay"></div> <div class="hero-content"> <p id="typed-welcome" class="hero-line hero-line-small"></p> <h2 id="typed-brand" class="hero-line hero-line-large"></h2> </div> <div class="hero-dots" role="tablist" aria-label="Banner selector"> <button class="hero-dot is-active" role="tab" aria-selected="true" aria-label="Slide 1"></button> <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button> <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button> </div> </section> <section class="bg-gray-250 min-h-screen flex flex-col justify-center font-[Times New Roman]"> <!-- Particle Background --> <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div> <section class="bg-gray-250 min-h-screen flex flex-col justify-center font-[Times New Roman] relative z-10"> <div class="container mx-auto max-w-6xl px-6 w-full mt-10 mb-1 flex-grow flex flex-col justify-center"> <!-- Two-column content --> <div class="flex flex-col justify-center gap-12 items-center justify-between"> <!-- Text Column --> <div class="md:basis-5/5 text-center relative z-10"> <h1 id="main-heading" class="relative inline-block text-5xl font-semibold tracking-tight text-gray-900 mb-12 leading-snug text-center md:text-left"> <span class="block text-gray-800 text-4xl text-center mb-2 animate-fade-in-down">
-Welcome to
-</span> <span class="text-[#716361] block text-5xl font-bold text-center quantum-text">
-Quantum Tools and Services
-</span> <!-- Quantum orbit animation --> <!-- <span class="quantum-orbit"></span>
-            <span class="quantum-orbit delay-1"></span>
-            <span class="quantum-orbit delay-2"></span> --> </h1> <p class="text-xl text-gray-600 mb-6 leading-relaxed animate-fade-in-up animation-delay-600">
-Your trusted partner in High-Pressure equipments, Uniaxial Strain Cells, Cryogenic and Optical Components, Micro/Nano-electronic Lithographic Services, Exotic Materials and Precision Machining.
-</p> <p class="text-lg text-gray-600 leading-relaxed animate-fade-in-up animation-delay-900">
-We also offer training workshops on High Pressure Experiments and Recipe development for Lithographic Device Fabrication.
-</p> </div> </div> <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8 mb-16 animate-fade-in-up animation-delay-1"> <!-- Card 1 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="dactools.html" class="absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2 z-10">Diamond Anvil Cells & Accessories</h3> <img src="images/dactools_front.jpg" alt="Diamond Anvil Cells & Accessories" class="rounded-lg mb-4 w-full object-contain"> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-Diamond Anvil Cells (DACs) are precision instruments used to generate ultra-high pressures by compressing small samples between two opposing diamond anvils.
-              These systems are essential for cutting-edge research in physics, chemistry, and materials science. QTS provides a complete set of support, including membrane cells, 
-              ruby fluorescence pressure calibration, gaskets, resistive heaters, and EDM drilling systems for gasket and support preparation—all compatible with cryostats, PPMS systems, magnetic fields, and cryogenic environments.
-              We also offer hands-on training modules to help researchers get started with high-pressure experiments.
-</span> <button class="read-more-toggle text-[#716361] font-semibold ml-2">Read More</button> </p> <!-- Learn More button stays on top and is clickable --> <a href="dactools.html" class="mt-auto inline-block bg-[#716361] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition z-20 relative">
-Learn More
-</a> </div> <!-- Card 2 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="cryogenic_uniaxial_strain_cells.html" class="w-full absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2">Cryogenic Strain/Stress Cells</h3> <img src="images/cryogenic_uniaxial_strain_cells.jpg" alt="Cryogenic Strain/Stress Cells" class="rounded-lg mb-4 w-full object-contain"> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-Cryogenic Strain and Stress Cells are versatile platforms engineered to apply controlled mechanical deformation—either displacement-driven strain 
-              or force-driven stress—to samples under extreme environments of low temperature and high magnetic field. By combining piezoelectric actuation with 
-              high-resolution sensing, these cells enable finely tunable control of the sample’s mechanical state with excellent stability and precision. This capability 
-              makes them ideal for performing electrical transport and magnetotransport measurements under controlled deformation, providing unique insights into 
-              correlated electron behavior and emergent phases.
-</span> <button class="read-more-toggle text-[#8A7A78] font-semibold ml-2">Read More</button> </p> <a href="cryogenic_uniaxial_strain_cells.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-Learn More
-</a> </div> <!-- Card 3 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="lithographic_device_fabrication.html" class="w-90 absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2">Micro/Nano-Fabrication Services</h3> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-We provide comprehensive services and consumables for lithographic device fabrication, supporting both micro- and nano-scale patterning workflows. 
-              Our offerings include a wide range of photoresists and electron-beam resists, custom-designed masks, high-purity substrates, and cleanroom-compatible processing tools, 
-              ensuring reliable and high-resolution fabrication for research and prototyping applications.
-</span> <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button> </p> <a href="lithographic_device_fabrication.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-Learn More
-</a> </div> <!-- Card 4 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="optical_components.html" class="absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2">Optical Components</h3> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-We provide high-quality optical components including lenses, mirrors, beam splitters, and mounts for precision experiments.
-            Designed for compatibility with scientific setups, our components ensure optimal performance in photonics and spectroscopy applications.
-</span> <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button> </p> <a href="optical_components.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-Learn More
-</a> </div> <!-- Card 5 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="vacuum_fittings.html" class="absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2">Vacuum Fittings</h3> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-Quantum Tools and Services offers a comprehensive range of high-quality vacuum fittings engineered for dependable sealing in high and ultra-high vacuum (UHV) environments. 
-              Our product line includes flanges, adapters, valves, and sealing components, all compatible with standard vacuum systems used in research laboratories and industrial applications.
-</span> <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button> </p> <a href="vacuum_fittings.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-Learn More
-</a> </div> <!-- Card 6 --> <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer"> <a href="machining.html" class="absolute inset-0 z-0"></a> <h3 class="text-xl font-semibold text-gray-800 mb-2">Precision Machining</h3> <p class="text-gray-600 mb-4 z-10"> <span class="read-more-text">
-We deliver high-precision CNC machining of stainless steel, copper, beryllium copper, and tungsten carbide components using certified, high-purity materials. 
-              Our process ensures tight dimensional tolerances, excellent surface finish, and full material integrity—suitable for critical applications in vacuum systems, 
-              cryogenics, and high-pressure or high-stress environments.
-</span> <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button> </p> <a href="machining.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-Learn More
-</a> </div> <!-- Card 7 --> <!-- <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer">
-          <a href="aluminium_structures.html" class="absolute inset-0 z-0"></a>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Heavy-Duty Aluminium T-Slot Extrusion Profile</h3>
-          <p class="text-gray-600 mb-4 z-10">
-            <span class="read-more-text">
-              Our high-strength T-slot aluminium framing system designed for building industrial racks, stacking systems, equipment frames, and precision lab structures. 
-              Manufactured from aerospace-grade 6061-T6 or 6082-T6 aluminium, these frames deliver exceptional load-bearing capacity, corrosion resistance, and 
-              modular flexibility — without the need for welding or heavy fabrication.
-            </span>
-            <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button>
-          </p>
-          <a href="aluminium_structures.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-            Learn More
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Tools and Services | High-Pressure, Cryogenic & Nanofabrication</title>
+  <meta name="description" content="Engineering-grade tools and scientific solutions for high-pressure research, cryogenic strain cells, micro/nano-lithography, and precision machining.">
+  <link rel="stylesheet" href="css/fab2-theme.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar (Real Contact & Status) -->
+  <div class="qts-top-bar">
+    <div class="qts-container qts-top-bar-inner">
+      <div class="qts-top-meta">
+        <span class="qts-mono-tag">[FACILITY // KOLKATA, IN]</span>
+        <span class="qts-divider">|</span>
+        <span class="qts-status-dot"></span>
+        <span class="qts-status-text">CLEANROOM & FABRICATION ONLINE</span>
+      </div>
+      <div class="qts-top-contact">
+        <a href="mailto:mainak@qtools.in" class="qts-contact-link">
+          <span class="qts-mono-label">EMAIL:</span> mainak@qtools.in
+        </a>
+        <span class="qts-divider">·</span>
+        <a href="tel:+919903764345" class="qts-contact-link">
+          <span class="qts-mono-label">TEL:</span> +91-9903764345
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header class="qts-header">
+    <div class="qts-container qts-header-inner">
+      <a href="index.html" class="qts-brand" aria-label="Quantum Tools and Services">
+        <img src="images/logo_black.png" alt="Quantum Tools and Services Logo" class="qts-logo">
+      </a>
+      <nav class="qts-nav" aria-label="Primary Navigation">
+        <ul class="qts-nav-list">
+          <li><a href="index.html" class="qts-nav-link active">Home</a></li>
+          <li class="qts-dropdown-trigger">
+            <a href="#products" class="qts-nav-link">
+              Products <span class="qts-chevron">▾</span>
+            </a>
+            <div class="qts-dropdown-panel">
+              <a href="dactools.html" class="qts-dropdown-item">
+                <span class="qts-item-badge sky">01</span>
+                <div>
+                  <strong>Diamond Anvil Cells & Accessories</strong>
+                  <p>Ultra-high pressure physics, DACs & ruby calibrants</p>
+                </div>
+              </a>
+              <a href="cryogenic_uniaxial_strain_cells.html" class="qts-dropdown-item">
+                <span class="qts-item-badge green">02</span>
+                <div>
+                  <strong>Cryogenic Strain/Stress Cells</strong>
+                  <p>In-situ quantum transport & piezo control</p>
+                </div>
+              </a>
+              <a href="lithographic_device_fabrication.html" class="qts-dropdown-item">
+                <span class="qts-item-badge gold">03</span>
+                <div>
+                  <strong>Micro/Nano-Fabrication Services</strong>
+                  <p>E-beam lithography, photolithography & patterning</p>
+                </div>
+              </a>
+              <a href="optical_components.html" class="qts-dropdown-item">
+                <span class="qts-item-badge lavender">04</span>
+                <div>
+                  <strong>Optical Components</strong>
+                  <p>Precision lenses, mirrors & spectroscopy optics</p>
+                </div>
+              </a>
+              <a href="vacuum_fittings.html" class="qts-dropdown-item">
+                <span class="qts-item-badge pink">05</span>
+                <div>
+                  <strong>Vacuum Fittings (UHV)</strong>
+                  <p>High & ultra-high vacuum flanges & feedthroughs</p>
+                </div>
+              </a>
+              <a href="aluminium_structures.html" class="qts-dropdown-item">
+                <span class="qts-item-badge taupe">06</span>
+                <div>
+                  <strong>Aluminium Extrusion Profiles</strong>
+                  <p>Modular cleanroom & optical breadboard framing</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="machining.html" class="qts-nav-link">Machining</a></li>
+          <li><a href="consulting.html" class="qts-nav-link">Consulting</a></li>
+          <li><a href="customers.html" class="qts-nav-link">Customers</a></li>
+          <li><a href="collaborators.html" class="qts-nav-link">Collaborators</a></li>
+          <li><a href="contact.html" class="qts-nav-cta">Inquire / RFQ</a></li>
+        </ul>
+      </nav>
+      <button class="qts-mobile-btn" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Reticle Hero Section (Split Architectural Layout) -->
+  <section class="qts-hero">
+    <div class="qts-container qts-hero-grid">
+      <div class="qts-hero-content">
+        <div class="qts-hero-pre">
+          <span class="qts-badge sky">[RETICLE // 01]</span>
+          <span class="qts-mono-tag">QUANTUM INSTRUMENTATION & NANOFABRICATION</span>
+        </div>
+        <h1 class="qts-hero-title">
+          Precision High-Pressure, Cryogenic & Lithographic Solutions.
+        </h1>
+        <p class="qts-hero-lead">
+          Quantum Tools and Services delivers engineering-grade instrumentation, micro/nano-device fabrication, and precision exotic alloy machining for leading academic and industrial research laboratories worldwide.
+        </p>
+        <div class="qts-hero-actions">
+          <a href="contact.html" class="qts-btn-primary">
+            Request Technical Quotation →
           </a>
-        </div> --> <!-- Card 8 --> <!-- <div class="group relative bg-gray-100 rounded-xl shadow-lg p-10 flex flex-col items-center hover:scale-115 hover:z-50 transition-transform duration-300 cursor-pointer">
-          <a href="customers.html" class="absolute inset-0 z-0"></a>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Customers</h3>
-          <p class="text-gray-600 mb-4 z-10">
-            <span class="read-more-text">
-              We work with research institutes like IACS Kolkata and VECC Kolkata on specialized research equipment and structural solutions, 
-              and collaborate with DEPEQ Technologies to provide microscopy solutions to academia and industry while integrating our other products into their systems. 
-              We are also the exclusive distributor for India for DACTools and Razorbill Instruments, delivering advanced high-pressure and strain-cell solutions to the 
-              research community.
-            </span>
-            <button class="read-more-toggle-text-only text-[#8A7A78] font-semibold ml-2">Read More</button>
-          </p>
-          <a href="aluminium_structures.html" class="mt-auto inline-block bg-[#8A7A78] text-white px-6 py-2 rounded-md hover:bg-sky-700 transition">
-            Learn More
+          <a href="#products" class="qts-btn-outline">
+            Explore Platforms
           </a>
-        </div> --> </div> <!-- Button centered BELOW the two columns --> <div class="mt-5 mb-1 text-center"> <a href="contact.html" class="inline-block bg-[#8A7A78] text-white text-xl px-12 py-6 rounded-xl font-semibold hover:bg-gray-800 transition">
-Get in Touch
-</a> </div> </div> </section> <!-- Particle Script --> <!-- <script type="module">
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("particles");
-      if (!container) return;
+        </div>
+        <div class="qts-hero-metrics">
+          <div class="qts-metric-item">
+            <strong>100+ GPa</strong>
+            <span>High-Pressure Range</span>
+          </div>
+          <div class="qts-metric-item">
+            <strong>&lt; 4.2 K</strong>
+            <span>Cryo Temperature</span>
+          </div>
+          <div class="qts-metric-item">
+            <strong>&lt; 20 nm</strong>
+            <span>Lithography Limit</span>
+          </div>
+          <div class="qts-metric-item">
+            <strong>UHV Grade</strong>
+            <span>10⁻¹⁰ mbar Vacuum</span>
+          </div>
+        </div>
+      </div>
 
-      const numParticles = 60;
-      for (let i = 0; i < numParticles; i++) {
-        const particle = document.createElement("div");
-        particle.className = "particle";
+      <!-- Hardware Showcase Stage -->
+      <div class="qts-hero-stage reticle-mark">
+        <div class="qts-stage-header">
+          <span id="qts-stage-title" class="qts-mono-tag" style="color: var(--ink-display); font-weight: 700;">
+            DIAMOND ANVIL CELLS & IN-SITU OPTICS
+          </span>
+          <span class="qts-badge green">CALIBRATED</span>
+        </div>
+        <div class="qts-stage-display">
+          <img id="qts-hero-img" src="images/dactools_front.jpg" alt="Diamond Anvil Cell instrumentation" class="qts-stage-img">
+        </div>
+        <div class="qts-stage-footer">
+          <span id="qts-stage-meta" class="qts-mono-tag" style="font-size: 0.68rem;">
+            UP TO 100+ GPa // CRYOGENIC & PPMS COMPATIBLE
+          </span>
+          <div class="qts-stage-tabs">
+            <button class="qts-stage-tab active" data-target="dac" aria-label="Select Diamond Anvil Cells">DAC PLATFORM</button>
+            <button class="qts-stage-tab" data-target="strain" aria-label="Select Cryogenic Strain Cells">CRYO STRAIN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Random radius for floating direction
-        const radiusX = (Math.random() - 0.5) * window.innerWidth;
-        const radiusY = (Math.random() - 0.5) * window.innerHeight;
+  <!-- Product Platforms (Wafer-Die Cards) -->
+  <section id="products" class="qts-section">
+    <div class="qts-container">
+      <div class="qts-section-header">
+        <span class="qts-section-kicker">[PLATFORMS & CAPABILITIES]</span>
+        <h2 class="qts-section-title">Core Scientific Instrumentation</h2>
+        <p class="qts-section-subtitle">
+          Turnkey and custom experimental apparatus engineered to withstand extreme pressures, cryogenic temperatures, and atomic-scale fabrication tolerances.
+        </p>
+      </div>
 
-        particle.style.setProperty("--x", `${radiusX}px`);
-        particle.style.setProperty("--y", `${radiusY}px`);
-        particle.style.top = `${Math.random() * window.innerHeight}px`;
-        particle.style.left = `${Math.random() * window.innerWidth}px`;
-        particle.style.animationDuration = `${8 + Math.random() * 12}s`;
+      <div class="qts-product-grid">
+        <!-- Card 1: Diamond Anvil Cells -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar sky"></div>
+          <div class="qts-card-media">
+            <img src="images/dactools_front.jpg" alt="Diamond Anvil Cells & Accessories">
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge sky">P // 01</span>
+              <span class="qts-mono-tag">HIGH PRESSURE</span>
+            </div>
+            <h3 class="qts-card-title">Diamond Anvil Cells & Accessories</h3>
+            <p class="qts-card-desc">
+              Precision platforms engineered to generate ultra-high static pressures. Complete with custom pre-indented gaskets, ruby fluorescence calibrants, resistive heaters, and membrane control.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">0–100+ GPa</span>
+              <span class="qts-spec-chip">Raman / IR / X-Ray</span>
+              <span class="qts-spec-chip">Membrane Drive</span>
+            </div>
+            <a href="dactools.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
 
-        container.appendChild(particle);
-      }
-    });
-  </script> --> </section> </main> <!-- Footer --> <footer class="site-footer"> <div class="footer-shell"> <div class="footer-grid"> <section class="footer-card footer-brand"> <h3>Quantum Tools and Services</h3> <p>Engineering-grade tools and scientific solutions for high-pressure, cryogenic, optical, and micro/nano-fabrication workflows.</p> <p class="footer-copy">� 2025 Quantum Tools and Services. All rights reserved.</p> </section> <section class="footer-card footer-contact"> <h4>Contact</h4> <p>Email: <a href="mailto:mainak@qtools.in">mainak@qtools.in</a></p> <p>Phone: +91-9903764345</p> <p>220 Prince Anwar Shah Road, Kolkata 700045, India.</p> </section> <section class="footer-card footer-meta"> <h4>Business Info</h4> <p>GSTIN: 19BGYPP7844J1Z7</p> <p>UDYAM Registration No: UDYAM-WB-10-0162763</p> <a class="footer-cta" href="contact.html">Get in Touch</a> </section> </div> <section class="footer-map-wrap" aria-label="Office location map"> <div class="footer-map-head"> <h4>Find Us</h4> <p>Office location in Kolkata</p> </div> <div class="footer-map-frame"> <iframe title="Quantum Tools and Services location map" src="https://www.openstreetmap.org/export/embed.html?bbox=88.3576%2C22.4898%2C88.3796%2C22.5068&layer=mapnik&marker=22.4983%2C88.3686" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div> </section> </div> </footer> </div> <!-- Mobile Side Menu (same color as header) --> <nav id="mobile-menu" class="relative-group fixed top-0 right-0 h-full w-auto bg-[#8A7A78] text-black shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60 md:hidden"> <div class="flex justify-end p-4"> <!-- Close Hamburger --> <button id="menu-toggle-menu" class="text-white focus:outline-none" aria-label="Close Menu"> <!-- X Icon --> <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> <div class="p-6"> <ul class="flex flex-col gap-6 text-sm font-medium"> <li><a href="index.html" class="hover:text-gray-200 transition block">Home</a></li> <li class="relative-group"> <button id="mobile-products-toggle" class="hover:text-gray-200 transition block w-full text-left" data-toggle-id="mobile-products-toggle">
-Products ▼
-</button> <ul id="mobile-products-dropdown" class="ml-2 mt-2 space-y-2 hidden relative opacity-0 invisible transition-opacity duration-300 z-50" data-dropdown-id="mobile-products-dropdown"> <li> <a href="dactools.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Diamond Anvil Cell & Accessories
-</a> </li> <li> <a href="cryogenic_uniaxial_strain_cells.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Cryogenic Strain/Stress Cells
-</a> </li> <li> <a href="lithographic_device_fabrication.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Micro/Nano-Fabrication Services
-</a> </li> <li> <a href="optical_components.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Optical Components
-</a> </li> <li> <a href="vacuum_fittings.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Vacuum Fittings
-</a> </li> <li> <a href="aluminium_structures.html" class="block px-4 py-2 rounded shadow-md border border-gray-600 hover:bg-gray-200 hover:shadow-lg transition duration-200 text-center">
-Heavy-Duty Aluminium T-Slot Extrusion Profile
-</a> </li> <!-- <li class="relative group">
-                  <a 
-                    id="mobile-product1-toggle" 
-                    class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200 hover:text-gray-200 transition flex items-center gap-1 group relative text-sm font-semibold"
-                    data-toggle-id="mobile-product1-toggle"
-                  >
-                    Product 1
-                    <svg
-                      class="w-4 h-4 text-gray-200 transform group-hover:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </a>
-                  <ul 
-                    id="mobile-product1-dropdown"
-                    class="hidden relative left-0 mt-1 w-30 bg-gray-600 text-white rounded shadow-lg opacity-0 transition-opacity duration-300 z-20"
-                    data-dropdown-id="mobile-product1-dropdown"
-                    data-nested-menu-flag=true
-                  >
-                    <li>
-                      <a 
-                        href="/products/product1/option1" 
-                        class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                      >
-                        Option 1
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="/products/product1/option2" 
-                        class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                      >
-                        Option 2
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="/src/pages/products/product2" class="block hover:text-blue-300">Product 2</a></li>
-                <li class="relative group">
-                  <a 
-                    id="mobile-product3-toggle" 
-                    class="block px-4 py-2 bg-gray-600 text-white rounded shadow-md border border-gray-600 hover:bg-purple-950 hover:shadow-lg transition duration-200 hover:text-gray-200 transition flex items-center gap-1 group relative text-sm font-semibold"
-                    data-toggle-id="mobile-product3-toggle"
-                  >
-                    Product 3
-                    <svg
-                      class="w-4 h-4 text-gray-200 transform group-hover:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </a>
-                  <ul 
-                    id="mobile-product3-dropdown"
-                    class="hidden relative left-0 mt-1 w-30 bg-gray-600 text-white rounded shadow-lg opacity-0 transition-opacity duration-300 z-20"
-                    data-dropdown-id="mobile-product3-dropdown"
-                    data-nested-menu-flag=true
-                  >
-                    <li>
-                      <a 
-                        href="/products/product3/option1" 
-                        class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                      >
-                        Option 1
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="/products/product3/option2" 
-                        class="block px-6 py-2 bg-gray-600 text-white rounded shadow-md hover:bg-purple-950 hover:shadow-lg transition duration-200"
-                      >
-                        Option 2
-                      </a>
-                    </li>
-                  </ul>
-                </li> --> </ul> </li> <li><a href="machining.html" class="hover:text-gray-200 transition block">Machining</a></li> <li><a href="consulting.html" class="hover:text-gray-200 transition block">Consulting</a></li> <li><a href="customers.html" class="hover:text-gray-200 transition block">Customers</a></li> <li><a href="collaborators.html" class="hover:text-gray-200 transition">Collaborators</a></li> <!-- <li><a href="/experts" class="hover:text-gray-200 transition block">Experts</a></li> --> <li><a href="contact.html" class="hover:text-gray-200 transition block">Contact</a></li> </ul> </div> </div> <!-- Nav links here... --> </nav> <div id="menu-overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-50 md:hidden"></div> <!-- Toggle Script --> <script data-cfasync="false" src="js/email-decode.min.js"></script><script>
-      const menu = document.getElementById('mobile-menu');
-      const page = document.getElementById('page-wrapper');
-      const openBtn = document.getElementById('menu-toggle-header');
-      const closeBtn = document.getElementById('menu-toggle-menu');
-      const overlay = document.getElementById('menu-overlay');
+        <!-- Card 2: Cryogenic Strain Cells -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar green"></div>
+          <div class="qts-card-media">
+            <img src="images/cryogenic_uniaxial_strain_cells.jpg" alt="Cryogenic Uniaxial Strain Cells">
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge green">P // 02</span>
+              <span class="qts-mono-tag">CRYOGENICS</span>
+            </div>
+            <h3 class="qts-card-title">Cryogenic Strain/Stress Cells</h3>
+            <p class="qts-card-desc">
+              Piezo-driven flexure platforms delivering continuously tunable uniaxial stress and strain down to liquid helium temperatures for quantum transport, superconductivity, and nematic order research.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">T &lt; 4.2 K</span>
+              <span class="qts-spec-chip">PPMS & Magnet Compatible</span>
+              <span class="qts-spec-chip">Sub-Micron Control</span>
+            </div>
+            <a href="cryogenic_uniaxial_strain_cells.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
 
-      function openMenu() {
-        document.body.style.overflow = 'hidden';
-        menu.classList.remove('translate-x-full');
-        menu.classList.add('translate-x-0');
-        openBtn.style.display = 'none';
+        <!-- Card 3: Micro/Nano-Fabrication -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar gold"></div>
+          <div class="qts-card-media">
+            <div class="qts-schematic">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="qts-mono-tag">[RETICLE DIE MASK]</span>
+                <span class="qts-mono-tag">RES: 18nm</span>
+              </div>
+              <div class="qts-schematic-grid">
+                <div class="qts-schematic-cell" style="background:var(--accent-gold-bg); border-color:var(--accent-gold);"></div>
+                <div class="qts-schematic-cell"></div>
+                <div class="qts-schematic-cell" style="background:var(--accent-gold-bg); border-color:var(--accent-gold);"></div>
+                <div class="qts-schematic-cell"></div>
+                <div class="qts-schematic-cell"></div>
+                <div class="qts-schematic-cell" style="background:var(--accent-gold-bg); border-color:var(--accent-gold);"></div>
+                <div class="qts-schematic-cell"></div>
+                <div class="qts-schematic-cell" style="background:var(--accent-gold-bg); border-color:var(--accent-gold);"></div>
+              </div>
+              <span class="qts-mono-tag" style="font-size:0.65rem;">ELECTRON-BEAM LITHOGRAPHY // PROTO-CLEANROOM</span>
+            </div>
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge gold">P // 03</span>
+              <span class="qts-mono-tag">LITHOGRAPHY</span>
+            </div>
+            <h3 class="qts-card-title">Micro/Nano-Fabrication Services</h3>
+            <p class="qts-card-desc">
+              End-to-end device fabrication including electron-beam lithography, photolithography, mask generation, high-purity resists, thin-film deposition, and custom recipe development for 2D materials.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">Sub-20nm Resolution</span>
+              <span class="qts-spec-chip">E-Beam & Photo Masks</span>
+              <span class="qts-spec-chip">Cleanroom Process</span>
+            </div>
+            <a href="lithographic_device_fabrication.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
 
-        // Show overlay
-        overlay.classList.remove('opacity-0', 'pointer-events-none');
-        overlay.classList.add('opacity-40');
-      }
+        <!-- Card 4: Optical Components -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar lavender"></div>
+          <div class="qts-card-media">
+            <div class="qts-schematic">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="qts-mono-tag">[OPTICAL SPECTRA]</span>
+                <span class="qts-mono-tag">λ: 200-2500nm</span>
+              </div>
+              <div style="height:48px; border-bottom:1px solid var(--accent-lavender); position:relative; margin:1rem 0;">
+                <div style="position:absolute; bottom:0; left:25%; width:2px; height:36px; background:var(--accent-lavender);"></div>
+                <div style="position:absolute; bottom:0; left:50%; width:2px; height:24px; background:var(--accent-lavender);"></div>
+                <div style="position:absolute; bottom:0; left:75%; width:2px; height:42px; background:var(--accent-lavender);"></div>
+              </div>
+              <span class="qts-mono-tag" style="font-size:0.65rem;">RAMAN & SYNCHROTRON DIAMOND WINDOWS</span>
+            </div>
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge lavender">P // 04</span>
+              <span class="qts-mono-tag">PHOTONICS</span>
+            </div>
+            <h3 class="qts-card-title">Precision Optical Components</h3>
+            <p class="qts-card-desc">
+              High-damage-threshold lenses, mirrors, beam splitters, and custom diamond/sapphire optical windows optimized for spectroscopy, Raman scattering, photoluminescence, and cryogenic setups.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">Diamond / Sapphire</span>
+              <span class="qts-spec-chip">Anti-Reflection Coatings</span>
+              <span class="qts-spec-chip">In-Situ Alignment</span>
+            </div>
+            <a href="optical_components.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
 
-      function closeMenu() {
-        document.body.style.overflow = '';
-        menu.classList.add('translate-x-full');
-        menu.classList.remove('translate-x-0');
-        openBtn.style.display = 'inline-block';
+        <!-- Card 5: Vacuum Fittings -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar pink"></div>
+          <div class="qts-card-media">
+            <div class="qts-schematic">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="qts-mono-tag">[UHV ENCLOSURE]</span>
+                <span class="qts-mono-tag">P: 10⁻¹⁰ mbar</span>
+              </div>
+              <div style="margin:auto 0; border:1px solid var(--accent-pink); padding:0.5rem; border-radius:var(--radius-xs); text-align:center;">
+                <span class="qts-mono-tag" style="color:var(--accent-pink);">CONFLAT (CF) // ISO-K // KF SEALS</span>
+              </div>
+              <span class="qts-mono-tag" style="font-size:0.65rem;">HELIUM LEAK-TESTED &lt; 1×10⁻¹⁰ mbar·l/s</span>
+            </div>
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge pink">P // 05</span>
+              <span class="qts-mono-tag">VACUUM</span>
+            </div>
+            <h3 class="qts-card-title">Vacuum Fittings & UHV Flanges</h3>
+            <p class="qts-card-desc">
+              Engineered sealing solutions for high and ultra-high vacuum environments. Flanges, adapters, bellows, feedthroughs, and valves crafted from electropolished 304L and 316LN stainless steel.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">10⁻¹⁰ mbar Vacuum</span>
+              <span class="qts-spec-chip">316LN Stainless Steel</span>
+              <span class="qts-spec-chip">Cryo Feedthroughs</span>
+            </div>
+            <a href="vacuum_fittings.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
 
-        // Hide overlay
-        overlay.classList.add('opacity-0', 'pointer-events-none');
-        overlay.classList.remove('opacity-40');
-      }
+        <!-- Card 6: CNC Machining -->
+        <article class="qts-card">
+          <div class="qts-card-accent-bar taupe"></div>
+          <div class="qts-card-media">
+            <div class="qts-schematic">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="qts-mono-tag">[5-AXIS CNC MICRON TOL]</span>
+                <span class="qts-mono-tag">± 0.002 mm</span>
+              </div>
+              <div style="margin:auto 0; display:flex; gap:0.5rem; justify-content:center;">
+                <span class="qts-spec-chip" style="background:var(--paper);">BeCu C17200</span>
+                <span class="qts-spec-chip" style="background:var(--paper);">Ti-6Al-4V</span>
+                <span class="qts-spec-chip" style="background:var(--paper);">Tungsten Carbide</span>
+              </div>
+              <span class="qts-mono-tag" style="font-size:0.65rem;">CERTIFIED PURITY & CRYOGENIC SUITABILITY</span>
+            </div>
+          </div>
+          <div class="qts-card-body">
+            <div class="qts-card-meta">
+              <span class="qts-badge taupe">P // 06</span>
+              <span class="qts-mono-tag">SPECIALTY METALS</span>
+            </div>
+            <h3 class="qts-card-title">Precision CNC Machining</h3>
+            <p class="qts-card-desc">
+              High-precision 5-axis CNC machining of specialty metals including beryllium copper, oxygen-free high-conductivity (OFHC) copper, tungsten carbide, and titanium for critical cryogenic assemblies.
+            </p>
+            <div class="qts-card-specs">
+              <span class="qts-spec-chip">Certified Materials</span>
+              <span class="qts-spec-chip">Tight Tolerances</span>
+              <span class="qts-spec-chip">EDM Hole Drilling</span>
+            </div>
+            <a href="machining.html" class="qts-card-action">
+              Explore Platform →
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      openBtn?.addEventListener('click', openMenu);
-      closeBtn?.addEventListener('click', closeMenu);
-      overlay?.addEventListener('click', closeMenu);
-    </script> <script>
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          const headerTitle = document.getElementById('header-title');
-          if (!entry.isIntersecting) {
-            headerTitle.classList.remove('opacity-0', 'scale-75');
-            headerTitle.classList.add('opacity-100', 'scale-100');
-          } else {
-            headerTitle.classList.add('opacity-0', 'scale-75');
-            headerTitle.classList.remove('opacity-100', 'scale-100');
-          }
-        },
-        { threshold: 0.1 }
-      );
+  <!-- Institutional Partners & Collaborators Strip -->
+  <section class="qts-section qts-section-alt">
+    <div class="qts-container">
+      <div class="qts-section-header">
+        <span class="qts-section-kicker">[PARTNERSHIPS & NETWORK]</span>
+        <h2 class="qts-section-title">Global Technology Partners</h2>
+        <p class="qts-section-subtitle">
+          QTS is the exclusive distributor and product consultant for world-renowned instrumentation leaders across the Indian subcontinent.
+        </p>
+      </div>
 
-      const mainHeading = document.getElementById('main-heading');
-      const headerTitle = document.getElementById('header-title');
-      if (mainHeading && headerTitle) {
-        observer.observe(mainHeading);
-      }
-    </script> <script src="js/dropdown.js" defer=""></script> <script src="js/read_more_handler.js" defer=""></script> <script src="js/hero-carousel.js" defer=""></script>  </body></html>
+      <div class="qts-partner-grid">
+        <div class="qts-partner-card">
+          <div class="qts-partner-logo-box">
+            <img src="images/dactools_logo.jpg" alt="DACTools Logo">
+          </div>
+          <h3>DACTools LLC</h3>
+          <p>
+            World leader in custom diamond anvil cell solutions, high-pressure heating systems, and specialized experimental accessories.
+          </p>
+          <span class="qts-mono-tag">[EXCLUSIVE INDIA PARTNER]</span>
+        </div>
 
+        <div class="qts-partner-card">
+          <div class="qts-partner-logo-box">
+            <img src="images/razorbill_logo.png" alt="Razorbill Instruments Logo">
+          </div>
+          <h3>Razorbill Instruments</h3>
+          <p>
+            Premier manufacturer of piezo-driven cryogenic uniaxial strain and stress cells engineered for ultra-low temperature research.
+          </p>
+          <span class="qts-mono-tag">[EXCLUSIVE INDIA PARTNER]</span>
+        </div>
 
+        <div class="qts-partner-card">
+          <div class="qts-partner-logo-box">
+            <img src="images/txo_logo.png" alt="TraceXero Logo">
+          </div>
+          <h3>TraceXero</h3>
+          <p>
+            Direct carbon capture engineering partner. QTS provides cleanroom fabrication, design optimization, and prototyping support.
+          </p>
+          <span class="qts-mono-tag">[FABRICATION PARTNER]</span>
+        </div>
+      </div>
 
+      <div style="text-align: center;">
+        <a href="collaborators.html" class="qts-btn-outline">
+          View All Collaborators & Institutions →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Unified Footer -->
+  <footer class="qts-footer">
+    <div class="qts-container">
+      <div class="qts-footer-grid">
+        <!-- Brand & Mission -->
+        <div class="qts-footer-brand">
+          <img src="images/logo_black.png" alt="Quantum Tools and Services" class="qts-footer-logo">
+          <p class="qts-footer-desc">
+            Engineering-grade tools, cryogenic apparatus, and semiconductor-standard micro/nano-fabrication solutions for high-impact research.
+          </p>
+          <div class="qts-top-meta">
+            <span class="qts-status-dot"></span>
+            <span class="qts-mono-tag">ISO / CLEANROOM COMPLIANT WORKFLOWS</span>
+          </div>
+        </div>
+
+        <!-- Platforms -->
+        <div class="qts-footer-col">
+          <h4>Platforms</h4>
+          <ul class="qts-footer-links">
+            <li><a href="dactools.html">Diamond Anvil Cells</a></li>
+            <li><a href="cryogenic_uniaxial_strain_cells.html">Cryogenic Strain Cells</a></li>
+            <li><a href="lithographic_device_fabrication.html">Micro/Nano-Fabrication</a></li>
+            <li><a href="optical_components.html">Optical Components</a></li>
+            <li><a href="vacuum_fittings.html">Vacuum Fittings (UHV)</a></li>
+            <li><a href="machining.html">Precision CNC Machining</a></li>
+          </ul>
+        </div>
+
+        <!-- Compliance & Info -->
+        <div class="qts-footer-col">
+          <h4>Enterprise Info</h4>
+          <ul class="qts-footer-links">
+            <li><span class="qts-mono-tag">GSTIN:</span> 19BGYPP7844J1Z7</li>
+            <li><span class="qts-mono-tag">UDYAM:</span> WB-10-0162763</li>
+            <li><a href="collaborators.html">Collaborators</a></li>
+            <li><a href="customers.html">Institutional Clients</a></li>
+            <li><a href="consulting.html">Process Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div class="qts-footer-col">
+          <h4>Direct Inquiries</h4>
+          <ul class="qts-footer-links">
+            <li>
+              <a href="mailto:mainak@qtools.in">mainak@qtools.in</a>
+            </li>
+            <li>
+              <a href="tel:+919903764345">+91-9903764345</a>
+            </li>
+            <li style="margin-top: 0.5rem; line-height: 1.5; font-size: 0.82rem; color: var(--ink-subtle);">
+              220 Prince Anwar Shah Road,<br>
+              Kolkata 700045, West Bengal, India.
+            </li>
+            <li style="margin-top: 0.75rem;">
+              <a href="contact.html" class="qts-btn-primary" style="padding: 0.45rem 0.9rem; font-size: 0.8rem;">
+                Submit Technical RFQ →
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qts-footer-bottom">
+        <div>
+          &copy; 2025 Quantum Tools and Services. All rights reserved.
+        </div>
+        <div class="qts-footer-legal">
+          <span class="qts-mono-tag">[STANDARDS: ASTM // DIN // SEMI]</span>
+          <a href="contact.html">Support</a>
+          <a href="index.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
