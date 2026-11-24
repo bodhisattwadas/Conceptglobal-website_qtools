@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Multi-Version Showcase Switcher Bar
+   ========================================================================== */
+.qts-showcase-bar {
+  background: #090d16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  position: relative;
+  z-index: 99999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.qts-showcase-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.qts-showcase-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qts-showcase-tag {
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+.qts-showcase-title {
+  font-weight: 600;
+  color: #f8fafc;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.qts-showcase-current {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.qts-showcase-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qts-showcase-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.qts-showcase-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.qts-showcase-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+.qts-showcase-btn.portal-btn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.qts-showcase-btn.portal-btn:hover {
+  background: rgba(245, 158, 11, 0.3);
+  color: #fef3c7;
+}
+
+@media (max-width: 768px) {
+  .qts-showcase-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 12px;
+  }
+  .qts-showcase-nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+}
